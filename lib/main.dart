@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:bmnav/bmnav.dart' as bmnav;
 
@@ -9,7 +10,6 @@ class MyApp extends StatelessWidget {
   Container Courses(String heading) {
     return Container(
         width: 170.0,
-
         child: Card(
           shape:
               RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.0)),
@@ -19,7 +19,6 @@ class MyApp extends StatelessWidget {
                 title: Text(heading,
                     style:
                         TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold)),
-
               ),
             ],
           ),
@@ -31,7 +30,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         backgroundColor: Colors.blueAccent,
-        appBar: AppBar( // APP BAR
+        appBar: AppBar(
+          // APP BAR
           backgroundColor: Colors.blueAccent,
           title: const Text('بسم الله الرحمن الرحيم'),
           actions: <Widget>[
@@ -48,31 +48,44 @@ class MyApp extends StatelessWidget {
             padding: const EdgeInsets.all(3.0),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
-
               children: <Widget>[
                 Container(
-                  decoration: BoxDecoration(borderRadius: BorderRadius.all(Radius.circular(15.0)),color: Colors.white,),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.all(Radius.circular(15.0)),
+                    color: Colors.white,
+                  ),
                   height: 150,
-
                   child: ListTile(
-
-                    title: Text('أكمل المشاهدة',
-                        style: TextStyle(
-                            fontSize: 30.0, fontWeight: FontWeight.bold), textAlign: TextAlign.right,),
+                    title: Text(
+                      'أكمل المشاهدة',
+                      style: TextStyle(
+                          fontSize: 30.0, fontWeight: FontWeight.bold),
+                      textAlign: TextAlign.right,
+                    ),
                   ),
                 ),
-                Text('ينصح به',style: TextStyle(fontSize: 30, color: Colors.white),textAlign: TextAlign.right),
-
-
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: <Widget>[
+                    IconButton(
+                      icon: Icon(Icons.expand_more),
+                      color: Colors.white,
+                      onPressed: () {
+                        print('the more button has been pressed');
+                      },
+                    ),
+                    Text('ينصح به',
+                        style: TextStyle(fontSize: 30, color: Colors.white),
+                        textAlign: TextAlign.right),
+                  ],
+                ),
                 Container(
                   margin: EdgeInsets.symmetric(vertical: 10.0),
                   padding: EdgeInsets.only(top: 0.0, bottom: 10.0),
-
                   height: 150.0,
                   child: ListView(
                     scrollDirection: Axis.horizontal,
                     children: <Widget>[
-
                       Courses("الصلاة"),
                       Courses("فقه"),
                       Courses("عقائد"),
@@ -80,7 +93,11 @@ class MyApp extends StatelessWidget {
                     ],
                   ),
                 ),
-                Text('أفضل المشاهدات',style: TextStyle(fontSize: 30, color: Colors.white),textAlign: TextAlign.right,),
+                Text(
+                  'أفضل المشاهدات',
+                  style: TextStyle(fontSize: 30, color: Colors.white),
+                  textAlign: TextAlign.right,
+                ),
                 Container(
                   margin: EdgeInsets.symmetric(vertical: 10.0),
                   padding: EdgeInsets.only(top: 0.0),
