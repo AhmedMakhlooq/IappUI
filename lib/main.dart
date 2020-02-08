@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:bmnav/bmnav.dart' as bmnav;
+import 'SearchPage.dart';
 
 void main() => runApp(MyApp());
 
@@ -29,10 +30,10 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        backgroundColor: Colors.blueAccent,
+        backgroundColor: Colors.green,
         appBar: AppBar(
           // APP BAR
-          backgroundColor: Colors.blueAccent,
+          backgroundColor: Colors.green,
           title: const Text('بسم الله الرحمن الرحيم'),
           actions: <Widget>[
             IconButton(
@@ -117,6 +118,7 @@ class MyApp extends StatelessWidget {
           ),
         ),
         bottomNavigationBar: bmnav.BottomNav(
+
           items: [
             bmnav.BottomNavItem(Icons.home, label: 'القائمة'),
             bmnav.BottomNavItem(Icons.search, label: 'البحث'),
